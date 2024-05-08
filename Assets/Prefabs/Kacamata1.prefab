@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 9064869606225555893}
   - component: {fileID: 1007521760789708904}
   - component: {fileID: 1556539614786529559}
+  - component: {fileID: 9096386421522850637}
   m_Layer: 0
   m_Name: Kacamata1
   m_TagString: Untagged
@@ -218,6 +219,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &9096386421522850637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2432645175185921011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a2f47afc48db4e40ae950198176ebe2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materials:
+  - {fileID: 2100000, guid: 5ebc4e1667deb684fa8af0eee852be98, type: 2}
+  - {fileID: 2100000, guid: a880af5e46197254c9f2061bca3b3044, type: 2}
+  Warna: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &3164936707883327328
 GameObject:
   m_ObjectHideFlags: 0
@@ -448,7 +465,7 @@ Transform:
   m_GameObject: {fileID: 6942634193854710054}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.0036994, y: 1.0206324, z: 1.0206324}
   m_ConstrainProportionsScale: 0
   m_Children: []

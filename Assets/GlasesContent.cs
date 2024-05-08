@@ -7,13 +7,10 @@ public class GlasesContent : MonoBehaviour
 {
     public TextMeshProUGUI tbrand;
     public TextMeshProUGUI tukuran;
-    public TextMeshProUGUI twarna;
-    public TextMeshProUGUI tbahan;
 
     public string brand;
     public string ukuran;
-    public string warna;
-    public string bahan;
+    public Color warna;
 
     public GameObject kacamata;
     // Start is called before the first frame update
@@ -21,8 +18,6 @@ public class GlasesContent : MonoBehaviour
     {
         tbrand.text = brand;
         tukuran.text = ukuran;
-        twarna.text = warna;
-        tbahan.text = bahan;
     }
 
 
