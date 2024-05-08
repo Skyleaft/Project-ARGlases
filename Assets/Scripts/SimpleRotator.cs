@@ -7,7 +7,6 @@ public class SimpleRotator : MonoBehaviour
     private Transform transform;
 
     public Vector3 axis;
-    public int angle;
     public bool isRotated;
     // Start is called before the first frame update
     void Start()
@@ -16,11 +15,11 @@ public class SimpleRotator : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         if (isRotated)
         {
-            transform.Rotate(axis,angle,Space.Self);
+            transform.Rotate(axis);
         }
     }
 }
