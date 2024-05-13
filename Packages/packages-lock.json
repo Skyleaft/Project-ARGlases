@@ -165,7 +165,7 @@
     },
     "com.unity.recorder": {
       "version": "4.0.2",
-      "depth": 1,
+      "depth": 0,
       "source": "registry",
       "dependencies": {
         "com.unity.timeline": "1.0.0"
