@@ -6,6 +6,7 @@ TagManager:
   tags:
   - KacamataSpawner
   - ARManager
+  - FaceImage
   layers:
   - Default
   - TransparentFX

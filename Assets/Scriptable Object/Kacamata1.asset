@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c66b98ac39dacb54ba0762fe83262ba3, type: 3}
+  m_Name: Kacamata1
+  m_EditorClassIdentifier: 
+  Nama: Reyben
+  Ukuran: 50-43-150
+  Warna: {r: 0, g: 0, b: 0, a: 1}
+  Prefab: {fileID: 2432645175185921011, guid: 3bfa2107e04e99d438e5e1e20ca941a0, type: 3}
+  Preview: {fileID: 21300000, guid: 20e1d8b7fd8f04c4ba6116f000174e3b, type: 3}
+  Gender: 2
+  Oval: 0.667
+  Square: 0.129
+  Oblong: 0.657
+  Round: 0.249

@@ -7,24 +7,21 @@ using UnityEngine.UI;
 
 public class GlasesContent : MonoBehaviour
 {
+    [Header("Setter Property")]
     public TextMeshProUGUI tbrand;
     public TextMeshProUGUI tukuran;
     public Image objColor;
     public Image objPreview;
 
-    public string brand;
-    public string ukuran;
-    public Color warna;
-    public Sprite PreviewImage;
-
-    public GameObject kacamata;
+    [Header("Content")]
+    public Kacamata kacamata;
     // Start is called before the first frame update
     void Start()
     {
-        tbrand.text = brand;
-        tukuran.text = ukuran;
-        objColor.color = warna;
-        objPreview.sprite = PreviewImage;
+        tbrand.text = kacamata.Nama;
+        tukuran.text = kacamata.Ukuran;
+        objColor.color = kacamata.Warna;
+        objPreview.sprite = kacamata.Preview;
     }
 
 
@@ -36,11 +33,11 @@ public class GlasesContent : MonoBehaviour
     public void SpawnKacamata()
     {
         var manager = GameObject.FindObjectOfType<ARKacamataManager>();
-        var colorChanger = kacamata.GetComponent<ColorKacamata>();
-        colorChanger.ChangeColor(warna);
-        manager.currentKacamata = kacamata;
+        var colorChanger = kacamata.Prefab.GetComponent<ColorKacamata>();
+        colorChanger.ChangeColor(kacamata.Warna);
+        manager.currentKacamata = kacamata.Prefab;
         var spawner = GameObject.FindObjectOfType<GlassSpawner>();
-        spawner.Spawn(kacamata);
+        spawner.Spawn(kacamata.Prefab);
     }
 
 }

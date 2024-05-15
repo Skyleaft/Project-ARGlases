@@ -472,12 +472,7 @@ MonoBehaviour:
   tukuran: {fileID: 7070886922373935921}
   objColor: {fileID: 9163306770533041985}
   objPreview: {fileID: 1316510539767432847}
-  brand: rayben
-  ukuran: 50-31-145
-  warna: {r: 0, g: 0, b: 0, a: 1}
-  PreviewImage: {fileID: 21300000, guid: 4d6b371a3497a1e459d11854ea8936d2, type: 3}
-  kacamata: {fileID: 2432645175185921011, guid: 3bfa2107e04e99d438e5e1e20ca941a0,
-    type: 3}
+  kacamata: {fileID: 11400000, guid: ace7239d67101bd4a8a3a6a6f8927b59, type: 2}
 --- !u!114 &3199108373772304105
 MonoBehaviour:
   m_ObjectHideFlags: 0
