@@ -7,6 +7,6 @@ using UnityEngine;
 public class JsonPrediction
 {
     public string time {get;set;}
-    public List<Prediction> predictions { get; set; }
+    public List<ShapePrediction> predictions { get; set; }
 
 }

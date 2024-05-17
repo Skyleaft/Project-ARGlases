@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Nama: asdasd
   Ukuran: 43-43-140
-  Warna: {r: 0, g: 0.046964735, b: 0.254717, a: 1}
-  Prefab: {fileID: 2432645175185921011, guid: 1e068ab9bebd31741a4899cf1ff94c59, type: 3}
-  Preview: {fileID: 21300000, guid: 0a2a0a9a5f762414cbbf2adb9e2abf9f, type: 3}
-  Gender: 2
+  Warna: {r: 0.735849, g: 0.010412939, b: 0.551989, a: 1}
+  Prefab: {fileID: 2432645175185921011, guid: 3155efadc035b4a4cba2ca9087afb14b, type: 3}
+  Preview: {fileID: 21300000, guid: 72b9b31f886ad8141ab8c16329eb8a4f, type: 3}
+  Gender: 1
   Oval: 0.3
-  Square: 0.5
-  Oblong: 0.5
+  Square: 0.71
+  Oblong: 0.329
   Round: 0.3
