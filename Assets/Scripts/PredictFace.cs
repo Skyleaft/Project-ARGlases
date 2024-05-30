@@ -11,38 +11,32 @@ public class PredictFace : MonoBehaviour
     public bool isPredicting;
     public GameObject LoadingCanvas;
     public SetDetectionRes uiSet;
+
+    private CapturedFace capturedFace;
     private void Awake()
     {
         LoadingCanvas.gameObject.SetActive(true);
         isPredicting = true;
+        capturedFace = GameObject.FindObjectOfType<CapturedFace>();
         StartCoroutine(GetPrediction());
-    }
-    void Start()
-    {
-
-    }
-    public void Update()
-    {
-
+        
     }
 
     IEnumerator GetPrediction()
     {
-        var capturedFace = GameObject.FindObjectOfType<CapturedFace>();
-        yield return new WaitForSeconds(1);
         if (capturedFace != null)
         {
             capturedFace.ImageData = capturedFace.currentTexture.EncodeToJPG();
-
+            //predict shape
             string api_key = "L75XrcNlzkxRdrmDLQlz";
-            string DATASET_NAME = "face-shape-detection";
-            string uploadURL = $"https://detect.roboflow.com/{DATASET_NAME}/1?api_key={api_key}&confidence=0.01";
+            string DATASET_NAME = "face-shape-detection/1";
+            string uploadURL = $"https://detect.roboflow.com/{DATASET_NAME}?api_key={api_key}&confidence=0.01";
 
             var postData = Convert.ToBase64String(capturedFace.ImageData);
             byte[] data = Encoding.UTF8.GetBytes(postData);
 
-            //send alternate request
-            yield return GetPredictAlternate(postData);
+            //send gender prediction request
+            yield return PredictGender(data);
 
             //send request
             UnityWebRequest www = new UnityWebRequest(uploadURL, "POST")
@@ -62,35 +56,37 @@ public class PredictFace : MonoBehaviour
             else
             {
                 var responseContent = www.downloadHandler.text;
-                Debug.Log(responseContent);
-                var res = JsonConvert.DeserializeObject<JsonPrediction>(responseContent);
+                var res = JsonConvert.DeserializeObject<JsonPredictionShape>(responseContent);
                 Debug.Log(res);
-                capturedFace.prediction = res.predictions.FirstOrDefault();
+                var prediction = res.predictions.FirstOrDefault();
+                if (prediction.Confidence < 0.3f)
+                {
+                    prediction.Confidence += 0.3f;
+                }
+                capturedFace.shapePrediction = prediction;
             }
             www.Dispose();
         }
         uiSet.SetUIValue(capturedFace);
-        yield return new WaitForSeconds(1);
         LoadingCanvas.SetActive(false);
     }
 
-    IEnumerator GetPredictAlternate(string imageData)
+    IEnumerator PredictGender(byte[] data)
     {
-        var capturedFace = GameObject.FindObjectOfType<CapturedFace>();
-        var apiURL = "https://www.betafaceapi.com/api/v2/media";
+        string api_key = "L75XrcNlzkxRdrmDLQlz";
+        string DATASET_NAME = "age-gender-and-hand-gestures-detection-by-baahir-for-smart-billboard/2";
+        string uploadURL = $"https://detect.roboflow.com/{DATASET_NAME}?api_key={api_key}&confidence=0.01";
 
-        var requestPost = new BetaFaceRequest()
+        //send request
+        UnityWebRequest www = new UnityWebRequest(uploadURL, "POST")
         {
-            api_key = "d45fd466-51e2-4701-8da8-04351c872236",
-            detection_flags = "cropface,recognition,classifiers",
-            file_base64 = imageData,
-            original_filename = "images.jpeg"
+            uploadHandler = new UploadHandlerRaw(data),
+            downloadHandler = new DownloadHandlerBuffer()
         };
-        using UnityWebRequest www = UnityWebRequest.Post(apiURL,
-            JsonConvert.SerializeObject(requestPost),
-            "application/json");
+        www.SetRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         yield return www.SendWebRequest();
 
+        // Get Response
         if (www.result != UnityWebRequest.Result.Success)
         {
             Debug.Log(www.downloadHandler.text);
@@ -98,18 +94,12 @@ public class PredictFace : MonoBehaviour
         }
         else
         {
-            var res = JsonConvert.DeserializeObject<BetaFace>(www.downloadHandler.text);
-            capturedFace.FaceMedia = res.media;
-            Debug.Log(www.downloadHandler.text);
+            var responseContent = www.downloadHandler.text;
+            var res = JsonConvert.DeserializeObject<JsonPredictionGender>(responseContent);
+            Debug.Log(res);
+            capturedFace.genderPrediction = res.predictions.FirstOrDefault();
         }
+        www.Dispose();
     }
 
-    public class BetaFaceRequest
-    {
-        public string api_key;
-        public string detection_flags;
-        public string file_base64;
-        public string original_filename;
     }
-
-}
