@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: adasdasdaawdawasd
+  m_text: Brand
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -469,10 +469,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tbrand: {fileID: 4218662515710236727}
-  tukuran: {fileID: 7070886922373935921}
+  tseri: {fileID: 7070886922373935921}
   objColor: {fileID: 9163306770533041985}
   objPreview: {fileID: 1316510539767432847}
-  kacamata: {fileID: 11400000, guid: ace7239d67101bd4a8a3a6a6f8927b59, type: 2}
+  kacamata: {fileID: 11400000, guid: 6dc7ef4349307bb449d9b88024f8b295, type: 2}
 --- !u!114 &3199108373772304105
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -554,7 +554,7 @@ GameObject:
   - component: {fileID: 3277381117552872000}
   - component: {fileID: 7070886922373935921}
   m_Layer: 5
-  m_Name: ukuran
+  m_Name: Seri
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -607,7 +607,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ukruan
+  m_text: Seri
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

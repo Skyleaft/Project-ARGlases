@@ -13,11 +13,13 @@ public class PredictFace : MonoBehaviour
     public SetDetectionRes uiSet;
 
     private CapturedFace capturedFace;
+    private ARKacamataManager manager;
     private void Awake()
     {
         LoadingCanvas.gameObject.SetActive(true);
         isPredicting = true;
         capturedFace = GameObject.FindObjectOfType<CapturedFace>();
+        manager = GameObject.FindObjectOfType<ARKacamataManager>();
         StartCoroutine(GetPrediction());
         
     }
@@ -26,22 +28,22 @@ public class PredictFace : MonoBehaviour
     {
         if (capturedFace != null)
         {
-            capturedFace.ImageData = capturedFace.currentTexture.EncodeToJPG();
+            var image = capturedFace.currentTexture.EncodeToJPG(100);
             //predict shape
             string api_key = "L75XrcNlzkxRdrmDLQlz";
             string DATASET_NAME = "face-shape-detection/1";
             string uploadURL = $"https://detect.roboflow.com/{DATASET_NAME}?api_key={api_key}&confidence=0.01";
 
-            var postData = Convert.ToBase64String(capturedFace.ImageData);
-            byte[] data = Encoding.UTF8.GetBytes(postData);
-
+            var postData = Convert.ToBase64String(image);
+            byte[] imagedata = Encoding.UTF8.GetBytes(postData);
+            
             //send gender prediction request
-            yield return PredictGender(data);
+            yield return PredictGender(imagedata);
 
             //send request
             UnityWebRequest www = new UnityWebRequest(uploadURL, "POST")
             {
-                uploadHandler = new UploadHandlerRaw(data),
+                uploadHandler = new UploadHandlerRaw(imagedata),
                 downloadHandler = new DownloadHandlerBuffer()
             };
             www.SetRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -69,6 +71,8 @@ public class PredictFace : MonoBehaviour
         }
         uiSet.SetUIValue(capturedFace);
         LoadingCanvas.SetActive(false);
+        if(capturedFace.shapePrediction.Confidence > 0.3)
+            manager.LoadScene("ARFace");
     }
 
     IEnumerator PredictGender(byte[] data)

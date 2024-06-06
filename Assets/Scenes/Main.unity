@@ -865,7 +865,7 @@ GameObject:
   - component: {fileID: 1321618737}
   - component: {fileID: 1321618736}
   m_Layer: 0
-  m_Name: ARManager
+  m_Name: ARKacamata Manager
   m_TagString: ARManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1167,31 +1167,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1617437746}
-  - component: {fileID: 1617437745}
+  - component: {fileID: 1617437747}
   m_Layer: 0
-  m_Name: CapturedImage
+  m_Name: CapturedFace
   m_TagString: FaceImage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1617437745
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1617437744}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88a5ca8f11764994f9c1a6c09d0a36a7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ImageData: 
-  currentTexture: {fileID: 0}
-  genderPrediction:
-    Gender: 
-    Confidence: 0
 --- !u!4 &1617437746
 Transform:
   m_ObjectHideFlags: 0
@@ -1207,6 +1190,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1617437747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1617437744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88a5ca8f11764994f9c1a6c09d0a36a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentTexture: {fileID: 0}
+  shapePrediction:
+    Shape: 
+    Confidence: 0
+  genderPrediction:
+    Gender: 
+    Confidence: 0
 --- !u!1 &1704624865
 GameObject:
   m_ObjectHideFlags: 0
@@ -1471,12 +1473,12 @@ PrefabInstance:
     - target: {fileID: 173531016972836176, guid: ef3ad7d1d1c8dda44af77ad701182f48,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -10
+      value: -63
       objectReference: {fileID: 0}
     - target: {fileID: 173531016972836176, guid: ef3ad7d1d1c8dda44af77ad701182f48,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 157
+      value: 183
       objectReference: {fileID: 0}
     - target: {fileID: 173531016972836176, guid: ef3ad7d1d1c8dda44af77ad701182f48,
         type: 3}

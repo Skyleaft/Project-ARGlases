@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Kacamata2
   m_EditorClassIdentifier: 
   Nama: Moscot
-  Ukuran: 46-43-140
+  Seri: D245
   Warna: {r: 0.4811321, g: 0, b: 0, a: 1}
-  Prefab: {fileID: 2432645175185921011, guid: 1e068ab9bebd31741a4899cf1ff94c59, type: 3}
+  Prefab: {fileID: 2432645175185921011, guid: 34021a5bc6384d54ba014b3896b22914, type: 3}
   Preview: {fileID: 21300000, guid: 0a2a0a9a5f762414cbbf2adb9e2abf9f, type: 3}
   Gender: 2
   Oval: 0.5

@@ -14,10 +14,9 @@ public class CapturePhoto : MonoBehaviour
     {
 
         var tex = Extension.GetReadableTexture2d(capturer.texture);
-        Extension.SaveImage(tex);
+        //Extension.SaveImage(tex);
         var captured = FindObjectOfType<CapturedFace>();
         captured.currentTexture = tex;
-        //faceImage.Shape = responseContent;
 
         var manager = FindObjectOfType<ARKacamataManager>();
         manager.LoadScene("CaptureResult");

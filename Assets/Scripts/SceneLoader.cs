@@ -12,12 +12,10 @@ public class SceneLoader : MonoBehaviour
     {
         button = GetComponent<Button>();
         var manager = FindObjectOfType<ARKacamataManager>();
-        button.onClick.AddListener(delegate { manager.LoadScene(LoadSceneName); });
+        button.onClick.AddListener(() =>
+        {
+            manager.LoadScene(LoadSceneName);
+        });
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }

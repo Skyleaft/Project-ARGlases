@@ -16,18 +16,12 @@ public class SetDetectionRes : MonoBehaviour
     public TextMeshProUGUI genderpercent;
     public Slider genderslider;
     
-    public Image Image;
-    // Start is called before the first frame update
-    void Start()
-    {
 
-    }
 
     public void SetUIValue(CapturedFace faces)
     {
         if (faces != null)
         {
-            Image.sprite = Sprite.Create(faces.currentTexture, new Rect(0.0f, 0.0f, faces.currentTexture.width, faces.currentTexture.height), new Vector2(0.5f, 0.5f), 100.0f);
             if (faces.shapePrediction != null)
             {
                 shape.text = faces.shapePrediction.Shape;

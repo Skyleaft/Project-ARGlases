@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [CreateAssetMenu(menuName = "ScriptableObject/Kacamata", fileName = "Kacamata")]
 public class Kacamata : ScriptableObject
 {
     [Header("Property")]
     public string Nama;
-    public string Ukuran;
+    [FormerlySerializedAs("Ukuran")] public string Seri;
     public Color Warna;
     public GameObject Prefab;
     public Sprite Preview;
@@ -24,5 +25,5 @@ public class Kacamata : ScriptableObject
     public float Round;
 }
 
-public enum Gender { Pria, Wanita,Universal }
+public enum Gender { Pria, Wanita,Unisex }
 

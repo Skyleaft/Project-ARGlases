@@ -19,5 +19,10 @@ public class ARKacamataManager : MonoBehaviour
     {
         SceneManager.LoadScene(sceneName, LoadSceneMode.Single);
     }
+
+    public void ClearKacamata()
+    {
+        currentKacamata = null;
+    }
     
 }

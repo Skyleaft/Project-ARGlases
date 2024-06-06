@@ -1,12 +1,14 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
+using UnityEngine.XR.ARFoundation;
 
 public class GlasesContent : MonoBehaviour
 {
     [Header("Setter Property")]
     public TextMeshProUGUI tbrand;
-    public TextMeshProUGUI tukuran;
+    public TextMeshProUGUI tseri;
     public Image objColor;
     public Image objPreview;
 
@@ -16,25 +18,28 @@ public class GlasesContent : MonoBehaviour
     void Start()
     {
         tbrand.text = kacamata.Nama;
-        tukuran.text = kacamata.Ukuran;
+        tseri.text = kacamata.Seri;
         objColor.color = kacamata.Warna;
         objPreview.sprite = kacamata.Preview;
     }
-
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    
     public void SpawnKacamata()
     {
         var manager = GameObject.FindObjectOfType<ARKacamataManager>();
         var colorChanger = kacamata.Prefab.GetComponent<ColorKacamata>();
         colorChanger.ChangeColor(kacamata.Warna);
         manager.currentKacamata = kacamata.Prefab;
-        var spawner = GameObject.FindObjectOfType<GlassSpawner>();
+        var spawner = GameObject.FindObjectOfType<ARSpawnKacamata>();
         spawner.Spawn(kacamata.Prefab);
+        // var faceManager = GameObject.FindObjectOfType<ARFaceManager>();
+        //
+        // foreach (var item in faceManager.trackables)
+        // {
+        //     DestroyImmediate(item.gameObject);
+        // }
+        // faceManager.facePrefab = kacamata.Prefab;
+        
+        
     }
 
 }

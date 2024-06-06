@@ -4,7 +4,7 @@ using System;
 [Serializable]
 public class ShapePrediction
 {
-    [JsonProperty("class")]
-    public string Shape { get; set; }
-    public float Confidence { get; set; }
+    [JsonProperty("class")] 
+    public string Shape;
+    public float Confidence;
 }

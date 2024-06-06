@@ -1,14 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.IO;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class CapturedFace : MonoBehaviour
 {
-    public byte[] ImageData;
     public Texture2D currentTexture;
+    [SerializeField]
     public ShapePrediction shapePrediction;
+    [SerializeField]
     public GenderPrediction genderPrediction;
     void Awake()
     {
@@ -20,5 +17,5 @@ public class CapturedFace : MonoBehaviour
         }
         DontDestroyOnLoad(this.gameObject);
     }
-    
+
 }
