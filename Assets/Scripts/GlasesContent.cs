@@ -30,7 +30,8 @@ public class GlasesContent : MonoBehaviour
         colorChanger.ChangeColor(kacamata.Warna);
         manager.currentKacamata = kacamata.Prefab;
         var spawner = GameObject.FindObjectOfType<ARSpawnKacamata>();
-        spawner.Spawn(kacamata.Prefab);
+        if(spawner!=null)
+            spawner.Spawn(kacamata.Prefab);
         // var faceManager = GameObject.FindObjectOfType<ARFaceManager>();
         //
         // foreach (var item in faceManager.trackables)

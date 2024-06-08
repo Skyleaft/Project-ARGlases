@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c66b98ac39dacb54ba0762fe83262ba3, type: 3}
+  m_Name: Kacamata5
+  m_EditorClassIdentifier: 
+  Nama: Rayben
+  Seri: Aviator
+  Warna: {r: 0.21568628, g: 0.14901961, b: 0.043137256, a: 1}
+  Prefab: {fileID: 2432645175185921011, guid: c3f64dbde8d93034a8edc2cc24da96ef, type: 3}
+  Preview: {fileID: 21300000, guid: 117cd77ed5a2623429fff6d60a478bb2, type: 3}
+  Gender: 2
+  Oval: 1
+  Square: 1
+  Oblong: 0
+  Round: 1
+  Heart: 0

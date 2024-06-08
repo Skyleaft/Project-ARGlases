@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using UnityEngine;
 
 public class FrameSugestions : MonoBehaviour
@@ -10,18 +11,42 @@ public class FrameSugestions : MonoBehaviour
     public List<Kacamata> ListDataKacamata;
 
     public List<GlasesContent> ListGlasesContents;
+
+    private CapturedFace capturedFace;
     // Start is called before the first frame update
     void Start()
     {
+        capturedFace = GameObject.FindObjectOfType<CapturedFace>();
         foreach (var item in ListDataKacamata)
         {
-            SpawnGlassContent(CardTemplate, item);
-        }
+            bool genderValid=false;
+            bool shapeValid = false;
+            List<string> validShapes = new List<string>();
+            if (item.Gender == Gender.Unisex)
+                genderValid = true;
+            var isFemale = capturedFace.genderPrediction.Gender.Contains("Wanita");
+            if (item.Gender == Gender.Wanita && isFemale)
+                genderValid = true;
+            if (item.Gender == Gender.Pria && !isFemale)
+                genderValid = true;
+            if(item.Oval==1f)
+                validShapes.Add("oval");
+            if(item.Oblong==1f)
+                validShapes.Add("oblong");
+            if(item.Round==1f)
+                validShapes.Add("round");
+            if(item.Square==1f)
+                validShapes.Add("square");
+            if(item.Heart==1f)
+                validShapes.Add("heart");
 
-        if (ListGlasesContents.Count > 0)
-        {
-            //ListGlasesContents.FirstOrDefault().SpawnKacamata();
+            if (validShapes.Contains(capturedFace.shapePrediction.Shape))
+                shapeValid = true;
+            
+            if(genderValid && shapeValid)
+                SpawnGlassContent(CardTemplate, item);
         }
+        
     }
 
     public void SpawnGlassContent(GameObject obj, Kacamata kacamata)

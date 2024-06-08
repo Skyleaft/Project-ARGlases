@@ -472,7 +472,7 @@ MonoBehaviour:
   tseri: {fileID: 7070886922373935921}
   objColor: {fileID: 9163306770533041985}
   objPreview: {fileID: 1316510539767432847}
-  kacamata: {fileID: 11400000, guid: 6dc7ef4349307bb449d9b88024f8b295, type: 2}
+  kacamata: {fileID: 11400000, guid: c345b2fbdedba3e47a45390fef6256fa, type: 2}
 --- !u!114 &3199108373772304105
 MonoBehaviour:
   m_ObjectHideFlags: 0

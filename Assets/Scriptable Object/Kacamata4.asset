@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c66b98ac39dacb54ba0762fe83262ba3, type: 3}
+  m_Name: Kacamata4
+  m_EditorClassIdentifier: 
+  Nama: Oakley
+  Seri: Oval
+  Warna: {r: 0, g: 0, b: 0, a: 1}
+  Prefab: {fileID: 2432645175185921011, guid: 07bc3a013b4dd51438cde43e4a55510c, type: 3}
+  Preview: {fileID: 21300000, guid: 42b5a4406ccf34f48ab52c8bb10ea4f6, type: 3}
+  Gender: 2
+  Oval: 0
+  Square: 1
+  Oblong: 0
+  Round: 1
+  Heart: 1

@@ -8,6 +8,8 @@ public class UIValueSetter : MonoBehaviour
 {
     [SerializeField]
     private TextMeshProUGUI shapeText;
+    [SerializeField]
+    private TextMeshProUGUI genderText;
     private CapturedFace _capturedFace;
     
     void Awake()
@@ -16,6 +18,7 @@ public class UIValueSetter : MonoBehaviour
         if (_capturedFace != null)
         {
             shapeText.text = _capturedFace.shapePrediction.Shape;
+            genderText.text = _capturedFace.genderPrediction.Gender;
         }
     }
     

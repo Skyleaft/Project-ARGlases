@@ -23,6 +23,8 @@ public class Kacamata : ScriptableObject
     public float Oblong;
     [Range(0f, 1f)]
     public float Round;
+    [Range(0f, 1f)]
+    public float Heart;
 }
 
 public enum Gender { Pria, Wanita,Unisex }
