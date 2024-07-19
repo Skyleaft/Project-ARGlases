@@ -8,9 +8,11 @@ public class FrameSugestions : MonoBehaviour
 {
     public GameObject CardTemplate;
     public RectTransform SpawnContent;
+    public RectTransform SpawnContentAll;
     public List<Kacamata> ListDataKacamata;
 
     public List<GlasesContent> ListGlasesContents;
+    public List<GlasesContent> ListGlasesContentsAll;
 
     private CapturedFace capturedFace;
     // Start is called before the first frame update
@@ -22,13 +24,13 @@ public class FrameSugestions : MonoBehaviour
             bool genderValid=false;
             bool shapeValid = false;
             List<string> validShapes = new List<string>();
-            if (item.Gender == Gender.Unisex)
-                genderValid = true;
-            var isFemale = capturedFace.genderPrediction.Gender.Contains("Wanita");
-            if (item.Gender == Gender.Wanita && isFemale)
-                genderValid = true;
-            if (item.Gender == Gender.Pria && !isFemale)
-                genderValid = true;
+            // if (item.Gender == Gender.Unisex)
+            //     genderValid = true;
+            // var isFemale = capturedFace.genderPrediction.Gender.Contains("Wanita");
+            // if (item.Gender == Gender.Wanita && isFemale)
+            //     genderValid = true;
+            // if (item.Gender == Gender.Pria && !isFemale)
+            //     genderValid = true;
             if(item.Oval==1f)
                 validShapes.Add("oval");
             if(item.Oblong==1f)
@@ -43,8 +45,10 @@ public class FrameSugestions : MonoBehaviour
             if (validShapes.Contains(capturedFace.shapePrediction.Shape))
                 shapeValid = true;
             
-            if(genderValid && shapeValid)
+            if(shapeValid)
                 SpawnGlassContent(CardTemplate, item);
+            
+            SpawnGlassContentAll(CardTemplate,item);
         }
         
     }
@@ -57,8 +61,16 @@ public class FrameSugestions : MonoBehaviour
         var contentobj = Instantiate(obj,SpawnContent);
         var content = contentobj.GetComponent<GlasesContent>();
         ListGlasesContents.Add(content);
-        
-            
+    }
+    
+    public void SpawnGlassContentAll(GameObject obj, Kacamata kacamata)
+    {
+        var initContent = obj.GetComponent<GlasesContent>();
+        initContent.kacamata = kacamata;
+        obj.name = kacamata.name;
+        var contentobj = Instantiate(obj,SpawnContentAll);
+        var content = contentobj.GetComponent<GlasesContent>();
+        ListGlasesContentsAll.Add(content);
     }
 
     // Update is called once per frame

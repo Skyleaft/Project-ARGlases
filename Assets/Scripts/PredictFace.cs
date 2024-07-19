@@ -38,7 +38,7 @@ public class PredictFace : MonoBehaviour
             byte[] imagedata = Encoding.UTF8.GetBytes(postData);
             
             //send gender prediction request
-            yield return PredictGender(imagedata);
+            //yield return PredictGender(imagedata);
 
             //send request
             UnityWebRequest www = new UnityWebRequest(uploadURL, "POST")

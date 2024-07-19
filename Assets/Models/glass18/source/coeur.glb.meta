@@ -1,0 +1,32 @@
+fileFormatVersion: 2
+guid: 62eb47353bf8a134eb29a97a91c63d9c
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: armature
+    second: {fileID: 2100000, guid: 08c4091da6f85e640be191fb42c771ff, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: armature.001
+    second: {fileID: 2100000, guid: 784f079acb414924888777900e992218, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: branch
+    second: {fileID: 2100000, guid: c308456777c7d5145858de0358cde4e4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: earpiece
+    second: {fileID: 2100000, guid: c7ad36a2254623f4f87d254d5e401c76, type: 2}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: cc45016b844e7624dae3aec10fb443ea, type: 3}
+  reverseAxis: 0
+  renderPipeline: 1
